@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+
+:root{
+     --primary-color: rgb(30, 30, 30);
+     --primary-pale-color: rgba(62, 62, 62);
+     --text-pale-color: #585858;
+     --pale-stroke: #cacaca;
+     --side-ruler: 3rem;
+}
+
+*{
+     font-family: 'Hind', sans-serif;
+     font-family: 'Noto Sans', sans-serif;
+     box-sizing: border-box;
+     padding: 0;
+     margin: 0;
+}
+
+section{
+     padding: 1rem var(--side-ruler);
+}
+
+/* Components */
+.w-25{
+     width: 25%;
+}
+.w-50{
+     width: 50%;
+}
+.w-75{
+     width: 75%;
+}
+.w-100{
+     width: 100%;
+}
+/* Flex */
+.d-flex{
+     display: flex;
+}
+
+.flex-row-reverse{
+     flex-direction: row-reverse;
+}
+
+.flex-column{
+     flex-direction: column;
+}
+.flex-column-reverse{
+     flex-direction: column-reverse;
+}
+
+.justify-content-start{
+     justify-content: flex-start;
+}
+.justify-content-center{
+     justify-content: center;
+}
+.justify-content-between{
+     justify-content: space-between;
+}
+.justify-content-around{
+     justify-content: space-around;
+}
+.justify-content-even{
+     justify-content: space-evenly;
+}
+
+.align-item-start{
+     align-items: flex-start;
+}
+.align-item-center{
+     align-items: center;
+}
+
+.gap-1{
+     gap: 10px;
+}
+.gap-2{
+     gap: 15px;
+}
+.gap-3{
+     gap: 20px;
+}
+.gap-4{
+     gap: 25px;
+}
+.gap-5{
+     gap: 30px;
+}
+
+/* placeholder */
+.placeholder{
+     color: var(--pale-stroke);
+     text-align: center;
+     font-size: 25px !important;
+     letter-spacing: 1px;
+}
+
+/* buttons */
+.fill_btn{
+     text-align: center;
+     background-color: var(--primary-pale-color);
+     color: white;
+     border: none;
+     cursor: pointer;
+     transition: background-color 0.3s ease;
+}
+.fill_btn:hover{
+     background-color: var(--primary-color);
+}
+.outline_btn{
+     text-align: center;
+     background-color: transparent;
+     font-size: 15px;
+     border: 1px solid var(--primary-color);
+     color: var(--primary-color);
+     cursor: pointer;
+     transition: background-color 0.3s ease, color 0.3s ease;
+}
+.outline_btn:hover{
+     color: white;
+     background-color: var(--primary-color);
+}
+.outline_btn.purchase-btn{
+     padding: .65rem 0;
+     margin-top: 1.2rem;
+     border-radius: 2px;
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: .5rem;
+}
+.outline_btn.purchase-btn.active{
+     color: white;
+     background-color: var(--primary-color);
+}
+
+/* loaders */
+.threeDot-loader, .threeDot-loader:before, .threeDot-loader:after {
+     border-radius: 50%;
+     width: 2.5em;
+     height: 2.5em;
+     animation-fill-mode: both;
+     animation: bblFadInOut 1.8s infinite ease-in-out;
+     top: -10px;
+}
+.threeDot-loader {
+     display: block;
+     color: #FFF;
+     font-size: 4px;
+     position: relative;
+     text-indent: -9999em;
+     transform: translateZ(0);
+     animation-delay: -0.16s;
+}
+.threeDot-loader:before,
+.threeDot-loader:after {
+     content: '';
+     position: absolute;
+     top: 0;
+}
+.threeDot-loader:before {
+     left: -3.5em;
+     animation-delay: -0.32s;
+}
+.threeDot-loader:after {
+     left: 3.5em;
+}
+
+@keyframes bblFadInOut {
+     0%, 80%, 100% { box-shadow: 0 2.5em 0 -1.3em }
+     40% { box-shadow: 0 2.5em 0 0 }
+}
+
+/* Components */
+
+/* Nav section */
+.nav nav{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 1rem var(--side-ruler);
+     position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+     z-index: 100000;
+     transition: background-color 0.3s ease;
+}
+
+.nav a{
+     color: var(--primary-color);
+     text-decoration: none;
+}
+
+.nav .logo-link{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 50px;
+     height: 50px;
+     font-size: 25px;
+     border: 1px solid var(--primary-color);
+     border-radius: 5px;
+     transition: 0.2s ease;
+}
+.nav .logo-link:hover{
+     background-color: var(--primary-color);
+}
+.nav .logo-link:hover i{
+     color: white;
+}
+
+.nav .nav-item-container{
+     display: flex;
+     gap: 2rem;
+     font-weight: 350;
+     font-size: 15px;
+}
+.nav .left .responsive-container button{
+     border: 0;
+     background-color: transparent;
+     font-size: 30px;
+     display: none;
+}
+.nav .nav-item-container a.active{
+     padding-bottom: 5px;
+     border-bottom: 1px solid var(--primary-color);
+}
+
+.nav .mid .logo{
+     font-family: 'Mooli', sans-serif;
+     font-size: 20px;
+     font-weight: bold;
+}
+.nav .mid .logo img{
+     width: 120px;
+}
+
+.nav .right .nav-social-container{
+     display: flex;
+     gap: 1.5rem;
+}
+
+.responsive-nav-item-container{
+     display: none;
+     background-color: white;
+     position: fixed;
+     z-index: 10000;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     padding-bottom: 1rem;
+     overflow: hidden;
+}
+.responsive-nav-item-container .nav-item-container{
+     display: none;
+     margin: auto 0;
+}
+.responsive-nav-item-container .nav-item-container a{
+     font-size: 3rem;
+}
+.responsive-nav-item-container .social-container{
+     display: none;
+}
+.responsive-nav-item-container .social-container .logo-link{
+     width: 40px;
+     height: 40px;
+     font-size: 25px;
+}
+/* Nav */
+
+/* Navigate */
+.introduction{
+     font-family: 'Merriweather', serif;
+     max-width: 100%;
+     line-height: 50px;
+     font-size: 35px;
+     font-weight: 600;
+     color: var(--primary-color);
+}
+.navigate{
+     color: var(--primary-pale-color);
+}
+.navigate-line{
+     margin: 3rem 0;
+     height: 1px;
+     background-color: #c9c9c9;
+}
+/* Navigate */
+
+/* Sign up form */
+.sign-up-form{
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     margin: 5rem auto;
+}
+.sign-up-form h4{
+     color: var(--text-pale-color);
+     font-weight: 400;
+     letter-spacing: .5px;
+     margin-bottom: 1rem;
+     text-align: center;
+}
+
+.sign-up-form .sign-up-form-container{
+     display: flex;
+     gap: 1rem;
+}
+.sign-up-form .sign-up-form-container input{
+     padding: 1rem 2rem;
+     border: 1px solid var(--pale-stroke);
+}
+.sign-up-form .sign-up-form-container button{
+     width: 120px;
+     font-weight: 500;
+     padding: 1rem;
+}
+/* Sign up form */
+
+/* Cart Button */
+.cart-btn{
+     position: fixed;
+     padding: 1rem;
+     right: var(--side-ruler);
+     bottom: var(--side-ruler);
+     font-size: 1rem;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 890px) {
+     :root{
+          --side-ruler: 2rem;
+     }
+
+     .nav nav .left .responsive-container button.toggle-nav{
+          display: block;
+          font-size: 2.5rem;
+     }
+
+     .nav .mid .logo{
+          font-size: 25px;
+     }
+
+     .nav nav .left .nav-item-container, .nav nav .right .nav-social-container{
+          display: none;
+     }
+
+     .responsive-nav-item-container.active{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+     }
+     .responsive-nav-item-container.active .nav-item-container{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+     }
+     .responsive-nav-item-container.active .nav-item-container a{
+          font-size: 3rem;
+     }
+     .responsive-nav-item-container.active .social-container{
+          display: flex;
+     }
+}
+
+@media screen and (max-width: 600px) {
+     :root{
+          --side-ruler: 1rem;
+     }
+
+     .nav nav .left .responsive-container button.toggle-nav{
+          font-size: 1.5rem;
+     }
+
+     .nav .mid .logo{
+          font-size: 15px;
+     }
+
+     .responsive-nav-item-container.active .nav-item-container a{
+          font-size: 1.8rem;
+     }
+
+     .responsive-nav-item-container .social-container .logo-link{
+          width: 35px;
+          height: 35px;
+          font-size: 20px;
+     }
+
+     .sign-up-form h4{
+          font-size: 1.4rem;
+     }
+     .sign-up-form .sign-up-form-container{
+          flex-direction: column;
+          align-items: center;
+     }
+     .sign-up-form .sign-up-form-container input{
+          width: 100%;
+          font-size: 1rem;
+     }
+     .sign-up-form .sign-up-form-container button{
+          font-size: 1rem;
+     }
+
+     .introduction{
+          font-size: 30px;
+          margin-top: 5rem;
+     }
+     .navigate-line{
+          margin: 1.5rem 0;
+     }
+}
